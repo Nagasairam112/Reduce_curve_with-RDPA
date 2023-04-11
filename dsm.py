@@ -5,10 +5,9 @@ from rdp import rdp
 import streamlit as st
 from io import StringIO
 st.set_page_config(page_title="rdp",layout="wide",page_icon = 'hs.png')
-
 st.set_option('deprecation.showPyplotGlobalUse', False)
 st.title("Reduce the curve using Ramer–Douglas–Peucker algorithm")
-st.header("Made by Ram -TECH SUPPORT II ")
+st.header("made by Ram -TECH SUPPORT II ")
 st.subheader('Use only 2 column data .csv format to reduce the curve')
 uploaded_file = st.file_uploader("Choose a csv file")
 try:
@@ -25,22 +24,23 @@ try:
     string_data = stringio.read()
     # st.write(string_data)
  df=pd.read_csv(uploaded_file)
+ try:
+  header_list = df.columns.values
+  v1=header_list[0]
+  v2=header_list[1]
+  v3 = header_list[2]
 
-# st.dataframe(df)
-
- header_list = df.columns.values
- v1=header_list[0]
- v2=header_list[1]
- v3=header_list[2]
- col1, col2 = st.columns(2)
- with col1:
-  option = st.selectbox(
+  col1, col2 = st.columns(2)
+  with col1:
+   option = st.selectbox(
     'choose X component',
-    (v1,v2,v3))
- with col2:
-  option2 = st.selectbox(
+     (v1,v2,v3))
+  with col2:
+   option2 = st.selectbox(
     'choose Y component',
-    (v1,v2,v3))
+     (v1,v2,v3))
+ except:
+     st.write("no third colum present, reselect the data")
  x = df[option]
  y = df[option2]
 
@@ -71,6 +71,8 @@ try:
     return df.to_csv().encode('utf-8')
 
  csv = convert_df(CK)
+
+# CK.to_csv('tx.csv',header=headerList,index=False)
  plt.plot(x,y,label='Input curve')
  plt.scatter(points_after_rdp[:, 0], points_after_rdp[:, 1], marker='o',color="red", label="Reduded curve")
  plt.legend()
@@ -86,6 +88,11 @@ try:
     mime='text/csv',
   )
 except:
-    st.write("some thing happen")
+    st.write("what happen")
+
+
+
+
+
 
 
