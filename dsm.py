@@ -87,7 +87,7 @@ try:
     mime='text/csv',
   )
 except:
-    st.write("what happen")
+    st.write("")
 
 
 
