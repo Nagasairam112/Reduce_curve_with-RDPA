@@ -1,7 +1,6 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-from scipy.interpolate import make_interp_spline
 from rdp import rdp
 import streamlit as st
 from io import StringIO
@@ -90,13 +89,3 @@ except:
     st.write("")
 
 
-# xnew=np.linspace(x.min(),x.max(),100)
-# spl= make_interp_spline(x,y,k=5)
-# y_smooth=spl(xnew)
-# plt.plot(xnew,y_smooth)
-# plt.plot(x,y,label='Input curve')
-# plt.plot(points_after_rdp[:, 0], points_after_rdp[:, 1], marker='o',color="red", label="Reduded curve")
-# plt.legend()
-# plt.show()
-# CK= pd.DataFrame([[points_after_rdp[:, 0], points_after_rdp[:, 1]]])
-# CK.to_csv('reduced_points.csv')
