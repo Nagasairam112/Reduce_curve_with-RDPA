@@ -28,17 +28,16 @@ try:
   header_list = df.columns.values
   v1=header_list[0]
   v2=header_list[1]
-  v3 = header_list[2]
 
   col1, col2 = st.columns(2)
   with col1:
    option = st.selectbox(
     'choose X component',
-     (v1,v2,v3))
+     (v1,v2))
   with col2:
    option2 = st.selectbox(
     'choose Y component',
-     (v1,v2,v3))
+     (v1,v2))
  except:
      st.write("no third colum present, reselect the data")
  x = df[option]
