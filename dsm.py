@@ -71,8 +71,6 @@ try:
     return df.to_csv().encode('utf-8')
 
  csv = convert_df(CK)
-
-# CK.to_csv('tx.csv',header=headerList,index=False)
  plt.plot(x,y,label='Input curve')
  plt.scatter(points_after_rdp[:, 0], points_after_rdp[:, 1], marker='o',color="red", label="Reduded curve")
  plt.legend()
@@ -88,6 +86,6 @@ try:
     mime='text/csv',
   )
 except:
-    st.write("")
+    st.write("some thing happen")
 
 
