@@ -28,7 +28,7 @@ try:
   header_list = df.columns.values
   v1=header_list[0]
   v2=header_list[1]
-  v3 = header_list[2]
+#   v3 = header_list[2]
 
   col1, col2 = st.columns(2)
   with col1:
