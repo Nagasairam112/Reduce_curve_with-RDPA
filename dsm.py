@@ -5,7 +5,6 @@ from rdp import rdp
 import streamlit as st
 from io import StringIO
 st.set_page_config(page_title="rdp",layout="wide",page_icon = 'hs.png')
-st.set_option('deprecation.showPyplotGlobalUse', False)
 st.title("Reduce the curve using Ramer–Douglas–Peucker algorithm")
 st.header("made by Ram -TECH SUPPORT II ")
 st.subheader('Use only 2 column data .csv format to reduce the curve')
